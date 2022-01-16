@@ -1,0 +1,131 @@
+<?php include($dbConnection_p); ?>
+
+<div class="container-fluid w-80">
+    <style>
+        #blogs_table {
+            table-layout: fixed;
+        }
+
+        #blogs_table td {
+            overflow: hidden;
+        }
+    </style>
+
+    <table class="table table-hover" id="blogs_table">
+        <thead>
+            <tr>
+                <th>Blogs</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <?php
+
+            if(isset($_GET['offset'])){
+                $offset = htmlspecialchars($_GET['offset']);
+                if($offset<0){
+                    $offset = 0;
+                }
+            }else{
+                $offset = 0;
+            }
+
+            $post_query = "SELECT * FROM `post_table` ORDER BY id DESC LIMIT 10 OFFSET $offset";
+            $result = $conn->query($post_query);
+
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr class='clickable-row' data-href='blogs.php?&action=viewpost&id=" . $row["id"] . "'><td><b>" . $row["title"]."</b><br>Published: ".$row["publicationDate"] . "<br><br>" . $row["summary"] . "</td></tr>";
+                }
+                echo "</tbody></table>";
+            } else {
+                echo "</tbody></table><br>No data to fetch<br>";
+            }
+
+            if($offset>0){
+                echo "<a class='btn btn-dark mx-2' href='blogs.php?offset=".($offset-10)."'>Prev</a>";
+            }
+            echo "<a class='btn btn-dark mx-2' href='blogs.php?offset=".($offset+10)."'>Next</a>";
+            ?>
+
+            <script>
+                $(document).ready(function($) {
+                    $(".clickable-row").click(function() {
+                        window.location = $(this).data("href");
+                    });
+                });
+            </script>
+</div>
+
+<?php $conn->close(); ?>
+
+<?php
+            $BMD_query = "SELECT * FROM `boardmembers_table`";
+            $result = $conn->query($BMD_query);
+
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while ($row = $result->fetch_assoc()) {
+            ?>
+                    <div class="ntg">
+                        <img src="<?php echo $templateimage[9]; ?>" class="mb-2" alt="...">
+                    </div>
+            <?php
+                }
+            } ?>
+
+#############################################################################
+<style>
+    div.scrollBMD {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+    div.scrollBMD div {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+    }
+
+    div.scrollBMD img {
+        width: 400px;
+        height: 400px;
+    }
+
+    div.scrollBMD::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    div.scrollBMD {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+</style>
+
+<div class="scrollBMD">
+    <div>
+        <img src="<?php echo $templateimage[6]; ?>" alt="...">
+    </div>
+    <div>
+        <img src="<?php echo $templateimage[1]; ?>" alt="...">
+    </div>
+    <div>
+        <img src="<?php echo $templateimage[2]; ?>" alt="...">
+    </div>
+    <div>
+        <img src="<?php echo $templateimage[3]; ?>" alt="...">
+    </div>
+    <div>
+        <img src="<?php echo $templateimage[4]; ?>" alt="...">
+    </div>
+    <div>
+        <img src="<?php echo $templateimage[5]; ?>" alt="...">
+    </div>
+</div>
