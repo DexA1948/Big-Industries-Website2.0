@@ -39,6 +39,7 @@ $BMDblock_p = $includes_p."BMDblock.php";
 $viewboardmember_p = $includes_p."viewboardmember.php";
 $pledgeforagriculture_p = $includes_p."pledgeforagriculture.php";
 $BMDplain_p = $includes_p."BMDplain.php";
+$viewyoutubevideos_p = $includes_p."viewyoutubevideos.php";
 
 // ################## ADMIN ####################### //
 // index file for admin page 
