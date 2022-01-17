@@ -68,6 +68,10 @@ if (isloggedin()) {
                 include($homepage_p);
                 break;
 
+            case 'edityoutubelinks':
+                include($edityoutubelinks_p);
+                break;
+
             default:
                 include($homepage_p);
         }

@@ -47,7 +47,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link p-2 <?php if ($title == "Our Subsidiaries - BIG Industries") echo 'active'; ?>" href="subsidiaries.php">Our Subsidiaries</a>
+                    <a class="nav-link p-2 <?php if ($title == "Our Subsidiaries - BIG Industries") echo 'active'; ?>" href="oursubsidiaries.php">Our Subsidiaries</a>
                 </li>
 
                 <li class="nav-item">

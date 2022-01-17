@@ -24,6 +24,10 @@
             </li>
 
             <li class="nav-item m-1">
+                <button class="navlink text-white btn" name="action" value="edityoutubelinks">Edit Youtube Links</button>
+            </li>
+
+            <li class="nav-item m-1">
                 <button class="navlink text-white btn" name="logout" value="true">Logout</button>
             </li>
         </ul>

@@ -63,6 +63,7 @@ $addboardmember_p = $admin_p."addboardmember.php";
 $editboardmember_p = $admin_p."editboardmember.php";
 $deleteboardmember_p = $admin_p."deleteboardmember.php";
 $BMDvalidation_p = $admin_p."BMDvalidation.php";
+$edityoutubelinks_p = $admin_p."edityoutubelinks.php";
 
 // ##################   IMAGES FOR SITE ####################### //
 $siteimg_folder = $rootfolder_p."siteimg/";

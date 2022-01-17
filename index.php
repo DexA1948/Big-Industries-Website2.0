@@ -109,10 +109,31 @@ include($head_p);
         </div>
     </div>
 
-    <!-- Board Members Photos Plain & Scrollable -->
-    <div class="container-fluid my-5">
-        <?php include($BMDplain_p); ?>
-        <hr>
+    <!-- Youtube and Facebook -->
+    <div class="container-fluid my-3 fbandyt">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row my-2" id="heading">
+                    <h2>Youtube</h2>
+                </div>
+                <?php
+                    include($dbConnection_p);
+                    include($viewyoutubevideos_p);
+                    viewyoutubevideos(1);
+                    $conn->close();
+                ?>
+                <script>
+                    $(".fbandyt iframe").width("100%");
+                    $(".fbandyt iframe").height("500");
+                </script>
+            </div>
+            <div class="col-md-4">
+                <div class="row my-2" id="heading">
+                    <h2>Facebook Page</h2>
+                </div>
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBIGIndustriesLtd&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+        </div>
     </div>
 
     <!-- Pledge To Uplift Agricultire -->
@@ -133,21 +154,10 @@ include($head_p);
         </div>
     </div>
 
-    <div class="container-fluid my-3 facebookplugin">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="row my-2" id="heading">
-                    <h2>Youtube</h2>
-                </div>
-                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/5GMrDvt-690?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="col-md-4">
-                <div class="row my-2" id="heading">
-                    <h2>Facebook Page</h2>
-                </div>
-                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBIGIndustriesLtd&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-            </div>
-        </div>
+    <!-- Board Members Photos Plain & Scrollable -->
+    <div class="container-fluid my-5">
+        <?php include($BMDplain_p); ?>
+        <hr>
     </div>
 </div>
 
