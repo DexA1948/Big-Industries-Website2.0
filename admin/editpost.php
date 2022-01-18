@@ -24,7 +24,7 @@ if (!isset($_POST['editarticle'])) {
         $content = $row['content'];
 ?>
 
-        <h2>Admin Panel - Edit Post</h2>
+        <h2>Admin Panel - Edit News</h2>
         <?php include($adminnavbar_p);?>
         <form action="<?php echo $adminindex_p . "?&action=editpost&id=" . $id; ?>" method="post" enctype="multipart/form-data">
 

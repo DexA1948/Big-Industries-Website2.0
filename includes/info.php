@@ -5,7 +5,7 @@ $company_name = "Business Interest Group Of Industries";
 
 // Company contact links
 $BIGtelephone_no = "+977-1-4353846";
-$BIGmobile_no = "+977-9851312924 (Manita Shrestha)";
+$BIGmobile_no = "+977-9851312924";
 $krishnamanshrestha_no = "+977-9849578257";
 $BIGemail = "bigltd2021@gmail.com";
 $BIGaddress = "Kathmandu-3, Basundhara, Ranibari";
@@ -40,6 +40,12 @@ $viewboardmember_p = $includes_p."viewboardmember.php";
 $pledgeforagriculture_p = $includes_p."pledgeforagriculture.php";
 $BMDplain_p = $includes_p."BMDplain.php";
 $viewyoutubevideos_p = $includes_p."viewyoutubevideos.php";
+$applyshareform_p = $includes_p."applyshareform.php";
+$applyshareformnepali_p = $includes_p."applyshareformnepali.php";
+
+// ################## Downloadables ######################### //
+$downloadables_p = $rootfolder_p."downloadables/";
+$applyshareformpdf_p = $downloadables_p."sharekharidform.pdf";
 
 // ################## ADMIN ####################### //
 // index file for admin page 
@@ -64,6 +70,7 @@ $editboardmember_p = $admin_p."editboardmember.php";
 $deleteboardmember_p = $admin_p."deleteboardmember.php";
 $BMDvalidation_p = $admin_p."BMDvalidation.php";
 $edityoutubelinks_p = $admin_p."edityoutubelinks.php";
+$viewsubmittedform_p = $admin_p."viewsubmittedform.php";
 
 // ##################   IMAGES FOR SITE ####################### //
 $siteimg_folder = $rootfolder_p."siteimg/";
@@ -103,18 +110,18 @@ $templateimage = array(
 // Extras
 $contactnoformats = <<<HERE
 +977-9811111111
-+977-9711111111
-+977-01-1111111
+        +977-9711111111
+        +977-01-1111111
 
-+977 9811111111
-+977 9711111111
-+977 011111111
+        +977 9811111111
+        +977 9711111111
+        +977 011111111
 
-9811111111
-9711111111
+        9811111111
+        9711111111
 
-01-1111111
-011111111
+        01-1111111
+        011111111
 HERE;
 
 ?>

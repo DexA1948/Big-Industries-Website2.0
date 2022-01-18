@@ -25,6 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $yt_videos_insert_query->bind_param("ss", $BIGyoutubelinks[2], $id2);
         $yt_videos_insert_query->execute();
+
+        echo("<script>alert('The links were updated successfully');</script>");
     }
 } else {
 
@@ -55,7 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li class="list-group-item">Get the embed code. Remember to turn on the privacy-enhanced mode.</li>
                 <li class="list-group-item">Paste the embed code in the input field.</li>
                 <li class="list-group-item">Click the input field to view if video loads.</li>
-                <li class="list-group-item">Add class="videonews" after &lt;iframe </li>
                 <li class="list-group-item">Press Post Videos button.</li>
             </ol>
         </div>

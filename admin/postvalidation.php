@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $title = test_input($_POST["title"]);
 
             if (strlen($title) > 200) {
-                $titleErr = "Too long (required length <= 100)";
+                $titleErr = "Too long (required length <= 200)";
             }
         }
 

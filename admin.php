@@ -21,6 +21,7 @@ include($head_p);
 
 // Everything in admin panel is showed in this box
 echo ("<div class='container-fluid w-80 mt-2'>");
+echo ("<style>@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');h2 {font-family: 'Roboto', sans-serif;color: #AB4F9A;font-weight: bold;}</style>");
 
 // If admin login form was submitted: validate and login
 // If create or edit post form was subitted: validate and update
@@ -70,6 +71,10 @@ if (isloggedin()) {
 
             case 'edityoutubelinks':
                 include($edityoutubelinks_p);
+                break;
+
+            case 'viewsubmittedform':
+                include($viewsubmittedform_p);
                 break;
 
             default:

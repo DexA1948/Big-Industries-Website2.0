@@ -1,4 +1,4 @@
-<h2>Admin Panel - Create New Post</h2>
+<h2>Admin Panel - Add News</h2>
 <?php include($adminnavbar_p); ?>
 <form action="<?php echo $adminindex_p."?&action=createpost"; ?>" method="post" enctype="multipart/form-data">
 

@@ -16,7 +16,7 @@
             </li>
 
             <li class="nav-item m-1">
-                <button class="navlink text-white btn" name="action" value="createpost">Create Post</button>
+                <button class="navlink text-white btn" name="action" value="createpost">Add News</button>
             </li>
 
             <li class="nav-item m-1">

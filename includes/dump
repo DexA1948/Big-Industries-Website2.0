@@ -129,3 +129,92 @@
         <img src="<?php echo $templateimage[5]; ?>" alt="...">
     </div>
 </div>
+
+<?php
+if (!empty($_FILES["citizenshipphoto"]["tmp_name"])) {
+    $citizenshipphoto = $_FILES["citizenshipphoto"]["tmp_name"];
+    $target_dir = "admin/client/submittedimages";
+    $target_file = $target_dir . basename($_FILES["citizenshipphoto"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+    // Check if image file is a actual image or fake image
+    $check = getimagesize($_FILES["citizenshipphoto"]["tmp_name"]);
+    if ($check !== false) {
+        $citizenshipphotoErr = "";
+    } else {
+        $citizenshipphotoErr = "File is not an image.";
+    }
+
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        $citizenshipphotoErr = "Sorry, file already exists. Please rename before upload or upload another file.";
+    }
+
+    // Check file size
+    if ($_FILES["citizenshipphoto"]["size"] > 50000000) {
+        $citizenshipphotoErr = "Sorry, file is too large.";
+    }
+
+    // Allow certain file formats
+    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+        $citizenshipphotoErr =  "Sorry, only JPG, JPEG & PNG files are allowed.";
+    }
+}else{
+    $citizenshipphotoErr = "Please provide this photo";
+}
+?>
+
+
+        <!-- Submitted Apply Share Forms -->
+      <div class="sectionheader mb-2 mt-4" id="applyshareheader">
+        <h3>Submitted Apply Share Forms</h3>
+        <p class="bg-success p-2 text-white">Click on item to view full details or edit it</p>
+      </div>
+      <div class="submittedshareformstable">
+        <table class="table table-bordered table-hover w-100" id="admin_post_table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Submitted Date</th>
+              <th>Petitioner Name</th>
+              <th>Contact Number</th>
+              <th>Applied Kitta</th>
+              <th>Applied Amount</th>
+              <th>Deposited Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <?php
+
+            if (isset($_GET['asoffset'])) {
+              $asoffset = htmlspecialchars($_GET['asoffset']);
+              $asoffset = $conn->real_escape_string($asoffset);
+              if ($asoffset < 0) {
+                $asoffset = 0;
+              }
+            } else {
+              $asoffset = 0;
+            }
+
+            $appliedshare_query = $conn->prepare("SELECT * FROM `applyshare_table` ORDER BY id DESC LIMIT 10 OFFSET ?");
+            $appliedshare_query->bind_param("i", $asoffset);
+            $appliedshare_query->execute();
+            $result = $appliedshare_query->get_result();
+
+            if ($result->num_rows > 0) {
+              // output data of each row
+              while ($row = $result->fetch_assoc()) {
+                echo "<tr class='clickable-row' data-href='" . $adminindex_p . "?&action=viewsubmittedform&id=" . $row["id"] . "'><td>" . $row["id"] . "</td><td>" . $row["submittedDate"] . "</td><td>" . $row["petitionername"] . "</td><td>" . $row["contactnumber"] . "</td><td>" . $row["appliedkitta"] . "</td><td>" . $row["appliedamount"] . "</td><td>" . $row["depositedamount"] . "</td></tr>";
+              }
+              echo "</tbody></table>";
+            } else {
+              echo "</tbody></table><br>No data to fetch<br>";
+            }
+
+            if ($asoffset > 0) {
+              echo "<a class='btn btn-dark mx-2' href='admin.php?&action=homepage&asoffset=" . ($asoffset - 10) . "'>Prev</a>";
+            }
+            echo "<a class='btn btn-dark mx-2' href='admin.php?&action=homepage&asoffset=" . ($asoffset + 10) . "'>Next</a>";
+            ?>

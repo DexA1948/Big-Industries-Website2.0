@@ -1,7 +1,7 @@
 <?php
 include($dbConnection_p);
 ?>
-
+<!-- Please change all links from blogs.php to news.php -->
 <div class="container-fluid w-75 bg-dark">
 <div id="newsbar" class="carousel carousel-light slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
