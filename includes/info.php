@@ -36,12 +36,14 @@ $newsbarplain_p = $includes_p."newsbarplain.php";
 $newstable_p = $includes_p."newstable.php";
 $viewpost_p = $includes_p."viewpost.php";
 $BMDblock_p = $includes_p."BMDblock.php";
+$BMDtable_p = $includes_p."BMDtable.php";
+$BMDplain_p = $includes_p."BMDplain.php";
 $viewboardmember_p = $includes_p."viewboardmember.php";
 $pledgeforagriculture_p = $includes_p."pledgeforagriculture.php";
-$BMDplain_p = $includes_p."BMDplain.php";
 $viewyoutubevideos_p = $includes_p."viewyoutubevideos.php";
 $applyshareform_p = $includes_p."applyshareform.php";
 $applyshareformnepali_p = $includes_p."applyshareformnepali.php";
+$BIGgallery_p = $includes_p."BIGgallery.php";
 
 // ################## Downloadables ######################### //
 $downloadables_p = $rootfolder_p."downloadables/";
@@ -75,6 +77,7 @@ $viewsubmittedform_p = $admin_p."viewsubmittedform.php";
 // ##################   IMAGES FOR SITE ####################### //
 $siteimg_folder = $rootfolder_p."siteimg/";
 $BIGlogo_jpg = $siteimg_folder."BIGlogo.jpg";
+$BIGbuilding = $siteimg_folder."BIGbuilding.jpg";
 $BIGlogowb_jpg = $siteimg_folder."biglogo3w.jpg";
 $BIGlogopb_jpg = $siteimg_folder."biglogo3p.jpg";
 $BIGlogo_png = $siteimg_folder."BIGlogo.png";
@@ -85,6 +88,32 @@ $BIGbanner = $siteimg_folder."BIGbanner.jpg";
 $BIGpamplet = $siteimg_folder."BIGpamplet.jpg";
 $BIGbackground = $siteimg_folder."backgroundtheme.jpg"; 
 $primebanklogo = $siteimg_folder."primebanklogo.png";
+$nepalflag_png = $siteimg_folder."NepalFlag.png";
+$usflag_png = $siteimg_folder."USFlag.png";
+
+$aboutus_folder = $siteimg_folder."aboutus/";
+$aboutus_photos = array(
+    "capital" => $aboutus_folder."capital.jpg",
+    "liability" => $aboutus_folder."liability.jpg",
+    "minimum" => $aboutus_folder."minimum.png",
+    "payment" => $aboutus_folder."payment.png",
+    "rupees" => $aboutus_folder."rupees.jpg"
+);
+
+$BIGgallery_folder = $siteimg_folder."BIGgallery/";
+
+$BIGgallery_photos = array(
+    $BIGgallery_folder."BIG0.jpg",
+    $BIGgallery_folder."BIG1.jpg",
+    $BIGgallery_folder."BIG2.jpg",
+    $BIGgallery_folder."BIG3.jpg",
+    $BIGgallery_folder."BIG4.jpg",
+    $BIGgallery_folder."BIG5.jpg",
+    $BIGgallery_folder."BIG6.jpg",
+    $BIGgallery_folder."BIG7.jpg",
+    $BIGgallery_folder."BIG8.jpg",
+    $BIGgallery_folder."BIG9.jpg"
+);
 
 $newsbar_photos = array(
     $siteimg_folder."templateimage1.jpg", $siteimg_folder."templateimage2.jpg", $siteimg_folder."templateimage3.jpg"
@@ -103,7 +132,15 @@ $templateimage = array(
     $siteimg_folder."templateimage9.jpg",
     $siteimg_folder."templateimage10.jpg",
     $siteimg_folder."templateimage11.jpg",
-    $siteimg_folder."templateimage12.jpg"
+    $siteimg_folder."templateimage12.jpg",
+    $siteimg_folder."templateimage13.jpg",
+    $siteimg_folder."templateimage14.jpg",
+    $siteimg_folder."templateimage15.jpg",
+    $siteimg_folder."templateimage16.jpg",
+    $siteimg_folder."templateimage17.jpg",
+    $siteimg_folder."templateimage18.jpg",
+    $siteimg_folder."templateimage19.jpg",
+    $siteimg_folder."templateimage20.jpg"
 );
 
 

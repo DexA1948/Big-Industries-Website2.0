@@ -237,16 +237,16 @@ if (isset($_POST["submitform"])) {
         } else {
             echo "<script>alert('Error While Submitting Details, Try Again');</script>";
         }
-        echo "<p class='h4 my-2 p-2 bg-success'>Hello ".$petitionername."! Your details were submitted successfully. We will contact you soon.</p>";
+        echo "<p class='h4 my-2 p-2 bg-success'>Hello " . $petitionername . "! Your details were submitted successfully. We will contact you soon.</p>";
         $petitionername = $contactnumber = $email = $currentaddress = $citizenshipaddress = $changedaddress = $appliedkitta = $appliedamount = $depositedamount = $sourceoffund = $petitionerphoto = $voucherphoto = $citizenshipphoto = $petitionerphoto = $voucherphoto = $citizenshipphoto = "";
-    }else{
-        if($petitionerphotoErr == ""){
+    } else {
+        if ($petitionerphotoErr == "") {
             $petitionerphotoErr = "Please select this photo again";
-        } 
-        if($voucherphotoErr == ""){
+        }
+        if ($voucherphotoErr == "") {
             $voucherphotoErr = "Please select this photo again";
         }
-        if($citizenshipphotoErr == ""){
+        if ($citizenshipphotoErr == "") {
             $citizenshipphotoErr = "Please select this photo again";
         }
     }
@@ -254,118 +254,144 @@ if (isset($_POST["submitform"])) {
 ?>
 
 <style>
-    table#applyshareformtable th{
+    table#applyshareformtable th {
         font-size: small;
     }
-    table#applyshareformtable td{
-        font-size: small;
+
+    table#applyshareformtable td {
         width: 80%;
     }
 </style>
+<div class="container-fluid my-4 p-2 w-75" style="border:1px solid #AB4F9A">
+    <div class="row p-4">
+        <p>You can also submit the form by sending us following details in Viber ( <span><?php echo $BIGmobile_no;?></span> ):</p>
+        <ul class="list-group">
+            <li class="list-group-item">Your Name</li>
+            <li class="list-group-item">Contact Number</li>
+            <li class="list-group-item">Deposited Amount</li>
+            <li class="list-group-item">Your Photo</li>
+            <li class="list-group-item">Photo of Bank Voucher</li>
+            <li class="list-group-item">Citizenship Photo</li>
+        </ul>
+    </div>
+</div>
+<div class="container-fluid my-4 p-2 w-75" style="border:1px solid #AB4F9A">
+    <div class="row">
+        <div class="text-end" id="languagebutton">
+            Language: <a class="btn btn-dark" href="applyshare.php?&lang=nepali">English</a>
+        </div>
+    </div>
 
-<span class="text-warning">Fields with * are compulsory</span> &nbsp;<span><a class="btn btn-dark" href="applyshare.php?&lang=nepali">Nepali</a></span>
-<form class="border border-2 border-info p-4 my-2" action="applyshare.php" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <span class="text-warning mx-4">Fields with * are compulsory</span>
+    </div>
 
-    <table id="applyshareformtable">
-        <tr>
-            <th class="m-2 p-2">Petitioner Name: <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="petitionernameErr" class="form-text text-warning"><?php echo $petitionernameErr; ?></div>
-                <input type="text" class="form-control" id="petitionername" name="petitionername" value="<?php echo $petitionername; ?>">
-            </td>
-        </tr>
-        <tr>
-            <th class="m-2 p-2">Contact Number: <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="contactnumberErr" class="form-text text-warning"><?php echo $contactnumberErr; ?></div>
-                <input type="text" class="form-control" id="contactnumber" name="contactnumber" value="<?php echo $contactnumber; ?>">
-            </td>
-        </tr>
-        <tr>
-            <th class="m-2 p-2">Email: </th>
-            <td class="m-2 p-2">
-                <div id="emailErr" class="form-text text-warning"><?php echo $emailErr; ?></div>
-                <input type="text" class="form-control" id="email" name="email" value="<?php echo $email; ?>">
-            </td>
-        </tr>
-        <tr>
-            <th class="m-2 p-2">Current Address: </th>
-            <td class="m-2 p-2">
-                <div id="currentaddressErr" class="form-text text-warning"><?php echo $currentaddressErr; ?></div>
-                <input type="text" class="form-control" id="currentaddress" name="currentaddress" value="<?php echo $currentaddress; ?>">
-            </td>
-        </tr>
-        <tr>
-            <th class="m-2 p-2">Permanent Address (according to Citizenship): </th>
-            <td class="m-2 p-2">
-                <div id="citizenshipaddressErr" class="form-text text-warning"><?php echo $citizenshipaddressErr; ?></div>
-                <input type="text" class="form-control" id="citizenshipaddress" name="citizenshipaddress" value="<?php echo $citizenshipaddress; ?>">
-            </td>
-        </tr>
-        <tr>
-            <th class="m-2 p-2">Permanent Address (Changed after 2074): </th>
-            <td class="m-2 p-2">
-                <div id="changedaddressErr" class="form-text text-warning"><?php echo $changedaddressErr; ?></div>
-                <input type="text" class="form-control" id="chnagedaddress" name="changedaddress" value="<?php echo $changedaddress; ?>">
-            </td>
-        </tr>
-        <tr>
-            <th class="m-2 p-2">Applied Kitta: <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="appliedkittaErr" class="form-text text-warning"><?php echo $appliedkittaErr; ?></div>
-                <input type="number" class="form-control" id="appliedkitta" name="appliedkitta" value="<?php echo $appliedkitta; ?>">
-            </td>
-        </tr>
-        <tr>
-            <th class="m-2 p-2">Applied Amount in Rupees (Applied Kitta x 100): <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="appliedamountErr" class="form-text text-warning"><?php echo $appliedamountErr; ?></div>
-                <input type="number" class="form-control" id="appliedamount" name="appliedamount" value="<?php echo $appliedamount; ?>">
-            </td>
-        </tr>
-        <tr>
-            <th class="m-2 p-2">Amount Deposited: <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="depositedamountErr" class="form-text text-warning"><?php echo $depositedamountErr; ?></div>
-                <input type="number" class="form-control" id="depositedamount" name="depositedamount" value="<?php echo $depositedamount; ?>">
-            </td>
-        </tr>
+    <div class="row m-1" id="applyshareform">
+        <form action="applyshare.php" method="post" enctype="multipart/form-data">
 
-        <tr class="border-top">
-            <th class="m-2 p-2">Source of fund: <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="sourceoffundErr" class="form-text text-warning"><?php echo $sourceoffundErr; ?></div>
-                <input type="text" class="form-control" id="sourceoffund" name="sourceoffund" value="<?php echo $sourceoffund; ?>">
-            </td>
-        </tr>
+            <table id="applyshareformtable">
+                <tr>
+                    <th class="m-2 p-2">Petitioner Name: <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="petitionernameErr" class="form-text text-warning"><?php echo $petitionernameErr; ?></div>
+                        <input type="text" class="form-control" id="petitionername" name="petitionername" value="<?php echo $petitionername; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="m-2 p-2">Contact Number: <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="contactnumberErr" class="form-text text-warning"><?php echo $contactnumberErr; ?></div>
+                        <input type="text" class="form-control" id="contactnumber" name="contactnumber" value="<?php echo $contactnumber; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="m-2 p-2">Email: </th>
+                    <td class="m-2 p-2">
+                        <div id="emailErr" class="form-text text-warning"><?php echo $emailErr; ?></div>
+                        <input type="text" class="form-control" id="email" name="email" value="<?php echo $email; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="m-2 p-2">Current Address: </th>
+                    <td class="m-2 p-2">
+                        <div id="currentaddressErr" class="form-text text-warning"><?php echo $currentaddressErr; ?></div>
+                        <input type="text" class="form-control" id="currentaddress" name="currentaddress" value="<?php echo $currentaddress; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="m-2 p-2">Permanent Address (according to Citizenship): </th>
+                    <td class="m-2 p-2">
+                        <div id="citizenshipaddressErr" class="form-text text-warning"><?php echo $citizenshipaddressErr; ?></div>
+                        <input type="text" class="form-control" id="citizenshipaddress" name="citizenshipaddress" value="<?php echo $citizenshipaddress; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="m-2 p-2">Permanent Address (Changed after 2074): </th>
+                    <td class="m-2 p-2">
+                        <div id="changedaddressErr" class="form-text text-warning"><?php echo $changedaddressErr; ?></div>
+                        <input type="text" class="form-control" id="chnagedaddress" name="changedaddress" value="<?php echo $changedaddress; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="m-2 p-2">Applied Kitta: <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="appliedkittaErr" class="form-text text-warning"><?php echo $appliedkittaErr; ?></div>
+                        <input type="number" class="form-control" id="appliedkitta" name="appliedkitta" value="<?php echo $appliedkitta; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="m-2 p-2">Applied Amount in Rupees (Applied Kitta x 100): <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="appliedamountErr" class="form-text text-warning"><?php echo $appliedamountErr; ?></div>
+                        <input type="number" class="form-control" id="appliedamount" name="appliedamount" value="<?php echo $appliedamount; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="m-2 p-2">Amount Deposited: <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="depositedamountErr" class="form-text text-warning"><?php echo $depositedamountErr; ?></div>
+                        <input type="number" class="form-control" id="depositedamount" name="depositedamount" value="<?php echo $depositedamount; ?>">
+                    </td>
+                </tr>
 
-        <tr class="border-top">
-            <th class="m-2 p-2">Petitioner Photo: <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="petitionerphotoErr" class="form-text text-warning"><?php echo $petitionerphotoErr; ?></div>
-                <input type="file" class="form-control" id="petitionerphoto" name="petitionerphoto">
-            </td>
-        </tr>
+                <tr class="border-top">
+                    <th class="m-2 p-2">Source of fund: <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="sourceoffundErr" class="form-text text-warning"><?php echo $sourceoffundErr; ?></div>
+                        <input type="text" class="form-control" id="sourceoffund" name="sourceoffund" value="<?php echo $sourceoffund; ?>">
+                    </td>
+                </tr>
 
-        <tr>
-            <th class="m-2 p-2">Bank Voucher Photo: <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="voucherphotoErr" class="form-text text-warning"><?php echo $voucherphotoErr; ?></div>
-                <input type="file" class="form-control" id="voucherphoto" name="voucherphoto">
-            </td>
-        </tr>
+                <tr class="border-top">
+                    <th class="m-2 p-2">Petitioner Photo: <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="petitionerphotoErr" class="form-text text-warning"><?php echo $petitionerphotoErr; ?></div>
+                        <input type="file" class="form-control" id="petitionerphoto" name="petitionerphoto">
+                    </td>
+                </tr>
 
-        <tr>
-            <th class="m-2 p-2">Citizenship Photo: <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="citizenshipphotoErr" class="form-text text-warning"><?php echo $citizenshipphotoErr; ?></div>
-                <input type="file" class="form-control" id="citizenshipphoto" name="citizenshipphoto">
-            </td>
-        </tr>
+                <tr>
+                    <th class="m-2 p-2">Bank Voucher Photo: <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="voucherphotoErr" class="form-text text-warning"><?php echo $voucherphotoErr; ?></div>
+                        <input type="file" class="form-control" id="voucherphoto" name="voucherphoto">
+                    </td>
+                </tr>
 
-        <tr>
-            <th><button class="btn btn-lg btn-dark" type="submit" name="submitform">Next</button></th>
-            <td></td>
-        </tr>
-    </table>
-</form>
+                <tr>
+                    <th class="m-2 p-2">Citizenship Photo: <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="citizenshipphotoErr" class="form-text text-warning"><?php echo $citizenshipphotoErr; ?></div>
+                        <input type="file" class="form-control" id="citizenshipphoto" name="citizenshipphoto">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th class="m-2 p-2"><button class="btn text-white" type="submit" name="submitform" style="background-color:#AB4F9A;">Submit</button></th>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</div>

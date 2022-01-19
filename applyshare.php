@@ -30,22 +30,34 @@ if (isset($_GET['lang'])) {
         color: #AB4F9A;
         font-weight: bold;
     }
+
+    #subheading h3 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+    }
+
+    #footer{
+        margin-top: -1rem !important;
+    }
 </style>
 
-<div class="container-fluid">
-    <div class="row my-2">
+<div class="container-fluid py-2" style="background-color:whitesmoke;margin-top: -1rem!important;">
+    <div class="row text-center my-2 py-4">
         <div id="heading">
-            <h1>Apply for reserved founder shares</h1>
+            <h1>BIG Industries</h1>
+        </div>
+        <div id="subheading">
+            <h3>Apply for reserved founder shares</h3>
         </div>
     </div>
 
-    <div class="row my-2">
-        <div id="downloadsharekharidform">
-            <a class="btn btn-primary" href="<?php echo $applyshareformpdf_p; ?>">Download Form For Buying Shares</a><br>
+    <div class="row">
+        <div id="downloadsharekharidform" class="d-flex justify-content-center">
+            <a class="btn btn-primary btn-sm" href="<?php echo $applyshareformpdf_p; ?>">Download Form For Buying Shares</a><br>
         </div>
     </div>
 
-    <div class="row my-2">
+    <div class="row">
         <?php include($form); ?>
     </div>
 

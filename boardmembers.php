@@ -6,7 +6,7 @@ include($head_p);
 include($dbConnection_p);
 
 if(!isset($_GET["action"])){
-    include($BMDblock_p);
+    include($BMDtable_p);
 }else{
     $action = htmlspecialchars($_GET['action']);
     
@@ -16,7 +16,7 @@ if(!isset($_GET["action"])){
             break;
         
         default:
-            include($BMDblock_p);
+            include($BMDtable_p);
     }
 
 }

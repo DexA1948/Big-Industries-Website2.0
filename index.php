@@ -9,7 +9,7 @@ include($head_p);
 
     #heading h1 {
         font-family: 'Roboto', sans-serif;
-        color: #AB4F9A;
+        color: white;
         font-weight: bold;
     }
 
@@ -24,11 +24,36 @@ include($head_p);
         color: white;
         font-weight: bold;
     }
+
+    #introphoto {
+        background: fixed;
+        background-image: url("<?php echo $BIGbuilding; ?>");
+        background-size: cover;
+        margin-top: -1rem !important;
+    }
+
+    #introphoto #heading {
+        background-color: rgba(206, 38, 189);
+        color: white;
+    }
 </style>
 
 <div class="container-fluid">
 
     <!-- Banner and Introduction -->
+    <div class="container-fluid p-0">
+        <div class="row" id="introphoto" style=" height: 35rem;">
+            <div class="w-75 d-none d-md-block m-auto p-5" id="heading">
+                <h1 class=" text-center pb-2" title="background image by: Dhiraj Thapa Chhetri">BIG Industries</h1>
+                <p>Business Interest Group of Industries (BIG Industries) is a transparent public company established to provide quality goods and services through the establishment of industries in different sectors like agriculture, public-sectors, business, cooperatives, banking, insurance, tourism, education, healthcare, engineering, and chartered-accounting with the participation of the experts from the respective fields. We are confident that this company and the industries promoted by it will create a sense of belonging to all the related communities and sectors.</p>
+            </div>
+            <div class="w-75 d-block d-md-none m-auto p-5" id="heading">
+                <h1 class=" text-center pb-2" title="background image by: Dhiraj Thapa Chhetri">BIG Industries</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner and Introduction
     <div class="container-fluid">
         <div class="row my-2" id="logoandheading">
             <div class="col-lg-6 mt-4 mb-2">
@@ -39,7 +64,7 @@ include($head_p);
                 <p style="text-align: justify;text-justify:inter-word;"> Business Interest Group of Industries (BIG Industries) is a transparent public company established to provide quality goods and services through the establishment of industries in different sectors like agriculture, public-sectors, business, cooperatives, banking, insurance, tourism, education, healthcare, engineering, and chartered-accounting with the participation of the experts from the respective fields. We are confident that this company and the industries promoted by it will create a sense of belonging to all the related communities and sectors.</p>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Objectives -->
     <div class="container-fluid p-3 my-1">
@@ -51,7 +76,7 @@ include($head_p);
         <div class="row justify-content-center" style="text-align:center;">
             <div class="col-lg-3 my-2">
                 <div class="card">
-                    <img src="<?php echo $templateimage[4]; ?>" class="card-img-top" alt="...">
+                    <img src="<?php echo $templateimage[13]; ?>" class="card-img-top" alt="...">
                     <div class="card-body" style="background-color: #AB4F9A;color:white;">
                         <h5 class="card-title">Investment in agriculture</h5>
                         <p class="card-text">Identifying various agricultural sectors, agro-based industries, food industries and investing for such industry and services as a joint-venture capital investment or to independently establish, operate, promote and invest in such industries.</p>
@@ -82,7 +107,7 @@ include($head_p);
                         <h5 class="card-title">Managerial role</h5>
                         <p class="card-text">To take the managerial responsibility of various governmental, non-governmental organizations, companies, firms for carrying out and completing different tasks and also to provide the necessary consultancy services to them for their growth. </p>
                     </div>
-                    <img src="<?php echo $templateimage[7]; ?>" class="card-img-bottom" alt="...">
+                    <img src="<?php echo $templateimage[3]; ?>" class="card-img-bottom" alt="...">
                 </div>
             </div>
         </div>
@@ -112,26 +137,26 @@ include($head_p);
     <!-- Youtube and Facebook -->
     <div class="container-fluid my-3 fbandyt">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-lg-8">
                 <div class="row my-2" id="heading">
                     <h2>Youtube</h2>
                 </div>
                 <?php
-                    include($dbConnection_p);
-                    include($viewyoutubevideos_p);
-                    viewyoutubevideos(1);
-                    $conn->close();
+                include($dbConnection_p);
+                include($viewyoutubevideos_p);
+                viewyoutubevideos(1);
+                $conn->close();
                 ?>
                 <script>
                     $(".fbandyt iframe").width("100%");
                     $(".fbandyt iframe").height("500");
                 </script>
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4">
                 <div class="row my-2" id="heading">
-                    <h2>Facebook Page</h2>
+                    <h2 onclick="window.location = '<?php echo $BIGfacebook_page; ?>'">Facebook Page</h2>
                 </div>
-                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBIGIndustriesLtd&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                <iframe class="d-none d-sm-block" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBIGIndustriesLtd&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
             </div>
         </div>
     </div>
@@ -159,7 +184,40 @@ include($head_p);
         <?php include($BMDplain_p); ?>
         <hr>
     </div>
+
+    <!-- Links to different pages and gallery -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row my-2" id="heading">
+                    <h2>Pages </h2>
+                </div>
+                <ul class="list-group">
+                    <li class="verticalBIGnavbar list-group-item d-flex justify-content-between align-items-center p-4" style="background-color: #AB4F9A;color:white;" onclick="window.location = 'aboutus.php'">Read More About Big Industries<span class="badge" style="font-size:larger;">></span></li>
+                    <li class="verticalBIGnavbar list-group-item d-flex justify-content-between align-items-center p-4" style="background-color: #AB4F9A;color:white;" onclick="window.location = 'news.php'">Read About Our Latest News And Events Here<span class="badge" style="font-size:larger;">></span></li>
+                    <li class="verticalBIGnavbar list-group-item d-flex justify-content-between align-items-center p-4" style="background-color: #AB4F9A;color:white;" onclick="window.location = 'applyshare.php'">Apply For Reserved Founder Share<span class="badge" style="font-size:larger;">></span></li>
+                    <li class="verticalBIGnavbar list-group-item d-flex justify-content-between align-items-center p-4" style="background-color: #AB4F9A;color:white;" onclick="window.location = '<?php echo $applyshareformpdf_p; ?>'">Download Form For Buying Shares<span class="badge" style="font-size:larger;">></span></li>
+                    <li class="verticalBIGnavbar list-group-item d-flex justify-content-between align-items-center p-4" style="background-color: #AB4F9A;color:white;" onclick="window.location = 'contactus.php'">Contact Us<span class="badge" style="font-size:larger;">></span></li>
+                </ul>
+            </div>
+            <div class="col-md-6" id="gallery">
+                <div class="row my-2" id="heading">
+                    <h2>Gallery</h2>
+                </div>
+                <?php include($BIGgallery_p); ?>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script>
+    $(".verticalBIGnavbar").mouseenter(function(){
+        $(this).css("opacity", "0.8");
+    });
+    $(".verticalBIGnavbar").mouseleave(function(){
+        $(this).css("opacity", "1");
+    });
+</script>
 
 <?php
 include($footer_p);

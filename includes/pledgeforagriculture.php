@@ -21,13 +21,13 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="<?php echo $templateimage[1]; ?>" class="w-100 mx-auto" alt="..." style="max-height: 500px;border-radius: 10px;">
+                <img src="<?php echo $templateimage[15]; ?>" class="w-100 mx-auto" alt="Boy In Rain by Dhiraj Thapa Chettri" style="max-height: 500px;border-radius: 10px;">
                 <div class="carousel-caption p-2">
                     <h1>Work for upliftment of agricultural sectors.</h1>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="<?php echo $templateimage[2]; ?>" class="w-100 mx-auto" alt="..." style="max-height: 500px;border-radius: 10px;">
+                <img src="<?php echo $templateimage[13]; ?>" class="w-100 mx-auto" alt="Women in Agriculture, Nepal by Dhiraj Thapa Chhetri" style="max-height: 500px;border-radius: 10px;">
                 <div class="carousel-caption p-2">
                     <h1>Invest in agro-based industries & food industries.</h1>
                 </div>

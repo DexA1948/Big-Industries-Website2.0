@@ -6,6 +6,7 @@
         color: white;
         font-size: large;
         font-weight: bold;
+        border-radius: 10px;
     }
 
     #BIGnavbar .active{
@@ -27,34 +28,41 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item">
-                    <a class="nav-link p-2 <?php if ($title == "BIG Industries") echo 'active'; ?>" href="index.php">Home</a>
+                    <a class="nav-link p-2 me-1 <?php if ($title == "BIG Industries") echo 'active'; ?>" href="index.php">Home</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link p-2 <?php if ($title == "About Us - BIG Industries") echo 'active'; ?>" href="aboutus.php">About Us</a>
+                    <a class="nav-link p-2 me-1 <?php if ($title == "About Us - BIG Industries") echo 'active'; ?>" href="aboutus.php">About Us</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link p-2 <?php if ($title == "Board Members - BIG Industries") echo 'active'; ?>" href="boardmembers.php">Board Members</a>
+                    <a class="nav-link p-2 me-1 <?php if ($title == "Board Members - BIG Industries") echo 'active'; ?>" href="boardmembers.php">Board Members</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link p-2 <?php if ($title == "Investors - BIG Industries") echo 'active'; ?>" href="investors.php">Investors</a>
+                    <a class="nav-link p-2 me-1 <?php if ($title == "Apply Share - BIG Industries") echo 'active'; ?>" href="applyshare.php">Apply Share</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link p-2 <?php if ($title == "Apply Share - BIG Industries") echo 'active'; ?>" href="applyshare.php">Apply Share</a>
+                    <a class="nav-link p-2 me-1 <?php if ($title == "Our Subsidiaries - BIG Industries") echo 'active'; ?>" href="oursubsidiaries.php">Our Subsidiaries</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link p-2 <?php if ($title == "Our Subsidiaries - BIG Industries") echo 'active'; ?>" href="oursubsidiaries.php">Our Subsidiaries</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link p-2 <?php if ($title == "News - BIG Industries") echo 'active'; ?>" href="news.php">News</a>
+                    <a class="nav-link p-2 me-1 <?php if ($title == "News - BIG Industries") echo 'active'; ?>" href="news.php">News</a>
                 </li>
             </ul>
         </div>
 
     </div>
 </nav>
+
+<script>
+    $(".nav-link.p-2.me-1").mouseenter(function(){
+        $(this).css("background-color", "white");
+        $(this).css("color", "#AB4F9A");
+    });
+    $(".nav-link.p-2.me-1").mouseleave(function(){
+        $(this).css("background-color", "#AB4F9A");
+        $(this).css("color", "white");
+    });
+</script>

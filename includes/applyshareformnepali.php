@@ -230,14 +230,14 @@ if (isset($_POST["submitform"])) {
             echo "<script>alert('केहि कारणबस हजुरको विवरण सफलरुपमा बुझाउन सकिएन, पुन प्रयास गर्नुहोस');</script>";
             echo "<p class='h4 my-2 p-2 bg-danger'>" . $petitionername . "! केहि कारणबस हजुरको विवरण सफलरुपमा बुझाउन सकिएन, पुन प्रयास गर्नुहोस|</p>";
         }
-    }else{
-        if($petitionerphotoErr == ""){
+    } else {
+        if ($petitionerphotoErr == "") {
             $petitionerphotoErr = "कृपया फेरी फोटो चयन गर्नुहोस्";
-        } 
-        if($voucherphotoErr == ""){
+        }
+        if ($voucherphotoErr == "") {
             $voucherphotoErr = "कृपया फेरी फोटो चयन गर्नुहोस्";
         }
-        if($citizenshipphotoErr == ""){
+        if ($citizenshipphotoErr == "") {
             $citizenshipphotoErr = "कृपया फेरी फोटो चयन गर्नुहोस्";
         }
     }
@@ -245,117 +245,141 @@ if (isset($_POST["submitform"])) {
 ?>
 
 <style>
-    table#applyshareformtable th{
-        font-size: small;
-    }
-    table#applyshareformtable td{
-        font-size: small;
+    table#applyshareformtable td {
         width: 80%;
     }
 </style>
-<span class="text-warning">* राखेका विवरणहरु उपलब्ध गराउन पर्नेछ</span> &nbsp;<span><a class="btn btn-dark" href="applyshare.php?&lang=english">अंग्रेजी</a></span>
-<form class="border border-2 border-info p-4 my-2" action="applyshare.php?&lang=nepali" method="post" enctype="multipart/form-data">
+<div class="container-fluid my-4 p-2 w-75" style="border:1px solid #AB4F9A">
+    <div class="row p-4">
+        <p>तपाईंले हामीलाई निम्न विवरणहरू भाइबर ( <span><?php echo $BIGmobile_no;?></span> ) मा पठाएर पनि फारम बुझाउन सक्नुहुन्छ:</p>
+        <ul class="list-group">
+            <li class="list-group-item">तपाइको नाम</li>
+            <li class="list-group-item">फोन नम्बर</li>
+            <li class="list-group-item">बैंकमा जम्मा भएको रकम</li>
+            <li class="list-group-item">तपाइको तस्बिर</li>
+            <li class="list-group-item">बैंक भाउचर को फोटो</li>
+            <li class="list-group-item">नागरिकताको फोटो</li>
+        </ul>
+    </div>
+</div>
 
-    <table id="applyshareformtable">
-        <tr>
-            <th class="m-2 p-2">निवेदकको नाम: <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="petitionernameErr" class="form-text text-warning"><?php echo $petitionernameErr; ?></div>
-                <input type="text" class="form-control" id="petitionername" name="petitionername" value="<?php echo $petitionername; ?>">
-            </td>
-        </tr>
-        <tr>
-            <th class="m-2 p-2">फोन नम्बर: <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="contactnumberErr" class="form-text text-warning"><?php echo $contactnumberErr; ?></div>
-                <input type="text" class="form-control" id="contactnumber" name="contactnumber" value="<?php echo $contactnumber; ?>">
-            </td>
-        </tr>
-        <tr>
-            <th class="m-2 p-2">इमेल: </th>
-            <td class="m-2 p-2">
-                <div id="emailErr" class="form-text text-warning"><?php echo $emailErr; ?></div>
-                <input type="text" class="form-control" id="email" name="email" value="<?php echo $email; ?>">
-            </td>
-        </tr>
-        <tr>
-            <th class="m-2 p-2">हाल बसोबास रहेको ठेगाना: </th>
-            <td class="m-2 p-2">
-                <div id="currentaddressErr" class="form-text text-warning"><?php echo $currentaddressErr; ?></div>
-                <input type="text" class="form-control" id="currentaddress" name="currentaddress" value="<?php echo $currentaddress; ?>">
-            </td>
-        </tr>
-        <tr>
-            <th class="m-2 p-2">नागरिकता अनुसारको स्थायी ठेगाना: </th>
-            <td class="m-2 p-2">
-                <div id="citizenshipaddressErr" class="form-text text-warning"><?php echo $citizenshipaddressErr; ?></div>
-                <input type="text" class="form-control" id="citizenshipaddress" name="citizenshipaddress" value="<?php echo $citizenshipaddress; ?>">
-            </td>
-        </tr>
-        <tr>
-            <th class="m-2 p-2">हाल परिवर्तित स्थायी ठेगाना (२0७४ पछि): </th>
-            <td class="m-2 p-2">
-                <div id="changedaddressErr" class="form-text text-warning"><?php echo $changedaddressErr; ?></div>
-                <input type="text" class="form-control" id="chnagedaddress" name="changedaddress" value="<?php echo $changedaddress; ?>">
-            </td>
-        </tr>
-        <tr>
-            <th class="m-2 p-2">लिन कबुल गरेको सेयर संख्या (कित्ता): <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="appliedkittaErr" class="form-text text-warning"><?php echo $appliedkittaErr; ?></div>
-                <input type="number" class="form-control" id="appliedkitta" name="appliedkitta" value="<?php echo $appliedkitta; ?>">
-            </td>
-        </tr>
-        <tr>
-            <th class="m-2 p-2">लिन कबुल गरेको सेयर रकम रुपैया (कित्ता x १00): <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="appliedamountErr" class="form-text text-warning"><?php echo $appliedamountErr; ?></div>
-                <input type="number" class="form-control" id="appliedamount" name="appliedamount" value="<?php echo $appliedamount; ?>">
-            </td>
-        </tr>
-        <tr>
-            <th class="m-2 p-2">सेयरको लागि बैंकमा जम्मा गरेको रकम: <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="depositedamountErr" class="form-text text-warning"><?php echo $depositedamountErr; ?></div>
-                <input type="number" class="form-control" id="depositedamount" name="depositedamount" value="<?php echo $depositedamount; ?>">
-            </td>
-        </tr>
+<div class="container-fluid my-4 p-2 w-75" style="border:1px solid #AB4F9A">
+    <div class="row">
+        <div class="text-end" id="languagebutton">
+            भाषा: <a class="btn btn-dark" href="applyshare.php?&lang=english">नेपाली</a>
+        </div>
+    </div>
 
-        <tr class="border-top">
-            <th class="m-2 p-2">लगानीको श्रोत: <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="sourceoffundErr" class="form-text text-warning"><?php echo $sourceoffundErr; ?></div>
-                <input type="text" class="form-control" id="sourceoffund" name="sourceoffund" value="<?php echo $sourceoffund; ?>">
-            </td>
-        </tr>
+    <div class="row">
+        <span class="text-warning mx-4">* राखेका विवरणहरु उपलब्ध गराउन पर्नेछ</span>
+    </div>
 
-        <tr class="border-top">
-            <th class="m-2 p-2">निवेदकको फोटो: <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="petitionerphotoErr" class="form-text text-warning"><?php echo $petitionerphotoErr; ?></div>
-                <input type="file" class="form-control" id="petitionerphoto" name="petitionerphoto">
-            </td>
-        </tr>
+    <div class="row m-1" id="applyshareform">
+        <form action="applyshare.php?&lang=nepali" method="post" enctype="multipart/form-data">
 
-        <tr>
-            <th class="m-2 p-2">बैंकमा रकम जम्मा गरेको सक्कल भौचर: <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="voucherphotoErr" class="form-text text-warning"><?php echo $voucherphotoErr; ?></div>
-                <input type="file" class="form-control" id="voucherphoto" name="voucherphoto">
-            </td>
-        </tr>
+            <table id="applyshareformtable">
+                <tr>
+                    <th class="m-2 p-2">निवेदकको नाम: <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="petitionernameErr" class="form-text text-warning"><?php echo $petitionernameErr; ?></div>
+                        <input type="text" class="form-control" id="petitionername" name="petitionername" value="<?php echo $petitionername; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="m-2 p-2">फोन नम्बर: <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="contactnumberErr" class="form-text text-warning"><?php echo $contactnumberErr; ?></div>
+                        <input type="text" class="form-control" id="contactnumber" name="contactnumber" value="<?php echo $contactnumber; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="m-2 p-2">इमेल: </th>
+                    <td class="m-2 p-2">
+                        <div id="emailErr" class="form-text text-warning"><?php echo $emailErr; ?></div>
+                        <input type="text" class="form-control" id="email" name="email" value="<?php echo $email; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="m-2 p-2">हाल बसोबास रहेको ठेगाना: </th>
+                    <td class="m-2 p-2">
+                        <div id="currentaddressErr" class="form-text text-warning"><?php echo $currentaddressErr; ?></div>
+                        <input type="text" class="form-control" id="currentaddress" name="currentaddress" value="<?php echo $currentaddress; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="m-2 p-2">नागरिकता अनुसारको स्थायी ठेगाना: </th>
+                    <td class="m-2 p-2">
+                        <div id="citizenshipaddressErr" class="form-text text-warning"><?php echo $citizenshipaddressErr; ?></div>
+                        <input type="text" class="form-control" id="citizenshipaddress" name="citizenshipaddress" value="<?php echo $citizenshipaddress; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="m-2 p-2">हाल परिवर्तित स्थायी ठेगाना (२0७४ पछि): </th>
+                    <td class="m-2 p-2">
+                        <div id="changedaddressErr" class="form-text text-warning"><?php echo $changedaddressErr; ?></div>
+                        <input type="text" class="form-control" id="chnagedaddress" name="changedaddress" value="<?php echo $changedaddress; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="m-2 p-2">लिन कबुल गरेको सेयर संख्या (कित्ता): <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="appliedkittaErr" class="form-text text-warning"><?php echo $appliedkittaErr; ?></div>
+                        <input type="number" class="form-control" id="appliedkitta" name="appliedkitta" value="<?php echo $appliedkitta; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="m-2 p-2">लिन कबुल गरेको सेयर रकम रुपैया (कित्ता x १00): <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="appliedamountErr" class="form-text text-warning"><?php echo $appliedamountErr; ?></div>
+                        <input type="number" class="form-control" id="appliedamount" name="appliedamount" value="<?php echo $appliedamount; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="m-2 p-2">सेयरको लागि बैंकमा जम्मा गरेको रकम: <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="depositedamountErr" class="form-text text-warning"><?php echo $depositedamountErr; ?></div>
+                        <input type="number" class="form-control" id="depositedamount" name="depositedamount" value="<?php echo $depositedamount; ?>">
+                    </td>
+                </tr>
 
-        <tr>
-            <th class="m-2 p-2">नागरिकताको फोटो: <span class="text-warning">*</span></th>
-            <td class="m-2 p-2">
-                <div id="citizenshipphotoErr" class="form-text text-warning"><?php echo $citizenshipphotoErr; ?></div>
-                <input type="file" class="form-control" id="citizenshipphoto" name="citizenshipphoto">
-            </td>
-        </tr>
+                <tr class="border-top">
+                    <th class="m-2 p-2">लगानीको श्रोत: <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="sourceoffundErr" class="form-text text-warning"><?php echo $sourceoffundErr; ?></div>
+                        <input type="text" class="form-control" id="sourceoffund" name="sourceoffund" value="<?php echo $sourceoffund; ?>">
+                    </td>
+                </tr>
 
-        <tr>
-            <th><button class="btn btn-lg btn-dark" type="submit" name="submitform">यस पछि</button></th>
-            <td></td>
-        </tr>
-    </table>
-</form>
+                <tr class="border-top">
+                    <th class="m-2 p-2">निवेदकको फोटो: <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="petitionerphotoErr" class="form-text text-warning"><?php echo $petitionerphotoErr; ?></div>
+                        <input type="file" class="form-control" id="petitionerphoto" name="petitionerphoto">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th class="m-2 p-2">बैंकमा रकम जम्मा गरेको सक्कल भौचर: <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="voucherphotoErr" class="form-text text-warning"><?php echo $voucherphotoErr; ?></div>
+                        <input type="file" class="form-control" id="voucherphoto" name="voucherphoto">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th class="m-2 p-2">नागरिकताको फोटो: <span class="text-warning">*</span></th>
+                    <td class="m-2 p-2">
+                        <div id="citizenshipphotoErr" class="form-text text-warning"><?php echo $citizenshipphotoErr; ?></div>
+                        <input type="file" class="form-control" id="citizenshipphoto" name="citizenshipphoto">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th class="m-2 p-2"><button class="btn text-white" type="submit" name="submitform" style="background-color:#AB4F9A;">भुझाउनुहोस्</button></th>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</div>

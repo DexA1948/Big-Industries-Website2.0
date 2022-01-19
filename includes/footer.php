@@ -49,9 +49,9 @@
     </div>
 
     <div class="row bg-light p-1" style="font-weight: lighter;font-size:small;">
-        <div class="container-fluid d-flex justify-content-center">
-        <a class="mx-2" href="index.php"><img src="<?php echo $BIGlogo_png ?>" class="img-fluid" style="height:1rem; width:1rem" alt="BIG Industries Logo"></a>
-        &copy;2022 Business Interest Group Of Industries Ltd. | Designed by:&nbsp;<a href="https://github.com/DexA1948?tab=repositories" style="text-decoration:none;color:inherit;">Dexa1948</a> &nbsp; & &nbsp;<a href="https://github.com/subash324" style="text-decoration:none;color:inherit;">Subash</a> &nbsp;
+        <div class="container-fluid w-75 text-center">
+            <a class="mx-2" href="index.php"><img src="<?php echo $BIGlogo_png ?>" class="img-fluid" style="height:1rem; width:1rem" alt="BIG Industries Logo"></a>
+            &copy;2022 Business Interest Group Of Industries Ltd. | Designed by:&nbsp;<a href="https://github.com/DexA1948?tab=repositories" style="text-decoration:none;color:inherit;">Dexa1948</a> &nbsp; & &nbsp;<a href="https://github.com/subash324" style="text-decoration:none;color:inherit;">Subash</a> &nbsp;
         </div>
     </div>
 
