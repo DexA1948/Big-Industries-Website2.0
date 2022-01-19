@@ -224,11 +224,11 @@ if (isset($_POST["submitform"])) {
 
         if ($conn->query($applyshare_query)) {
             echo "<script>alert('तपाईको विवरण सफलरुपमा बुझाइएको छ');</script>";
-            echo "<p class='h4 my-2 p-2 bg-success'>" . $petitionername . "! तपाईको विवरण सफलरुपमा बुझाइएको छ| हामी तपाइलाई छिट्टै सम्पर्क गर्नेछौ|</p>";
+            echo "<p class='h5 w-75 mx-auto my-4 p-2 bg-success'>" . $petitionername . "! तपाईको विवरण सफलरुपमा बुझाइएको छ| हामी तपाइलाई छिट्टै सम्पर्क गर्नेछौ|</p>";
             $petitionername = $contactnumber = $email = $currentaddress = $citizenshipaddress = $changedaddress = $appliedkitta = $appliedamount = $depositedamount = $sourceoffund = $petitionerphoto = $voucherphoto = $citizenshipphoto = $petitionerphoto = $voucherphoto = $citizenshipphoto = "";
         } else {
             echo "<script>alert('केहि कारणबस हजुरको विवरण सफलरुपमा बुझाउन सकिएन, पुन प्रयास गर्नुहोस');</script>";
-            echo "<p class='h4 my-2 p-2 bg-danger'>" . $petitionername . "! केहि कारणबस हजुरको विवरण सफलरुपमा बुझाउन सकिएन, पुन प्रयास गर्नुहोस|</p>";
+            echo "<p class='h5 w-75 mx-auto my-4 p-2 bg-success'>" . $petitionername . "! केहि कारणबस हजुरको विवरण सफलरुपमा बुझाउन सकिएन, पुन प्रयास गर्नुहोस|</p>";
         }
     } else {
         if ($petitionerphotoErr == "") {

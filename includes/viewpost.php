@@ -1,4 +1,4 @@
-<div class="container-fluid w-75">
+<div class="container-fluid">
 
     <?php
 
@@ -14,7 +14,7 @@
 
         if ($result->num_rows !== 1) {
             echo "<p class='bg-warning p-2'>Sorry, requested resource not found, please look at blog tables below</p>";
-            include($blogstable_p);
+            include($newstable_p);
         } else {
     ?>
 
@@ -31,7 +31,7 @@
             }
         }
     } else {
-        include($blogstable_p);
+        include($newstable_p);
     }
 
 

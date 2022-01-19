@@ -92,6 +92,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($target_file == "") {
                     $target_file_result = $conn->query("SELECT photopath from `post_table` where id='$id'");
                     $target_file = $target_file_result->fetch_assoc()['photopath'];
+                }else{
+                    $delete_file_result = $conn->query("SELECT photopath from `post_table` where id='$id'");
+                    $delete_file = $delete_file_result->fetch_assoc()['photopath'];
+                    unlink($delete_file);
                 }
 
                 $post_edit_query = "UPDATE `post_table` SET title='$title', summary='$summary', content='$content', photopath='$target_file' WHERE id='$id'";

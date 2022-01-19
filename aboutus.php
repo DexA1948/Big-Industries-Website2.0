@@ -31,7 +31,7 @@ if (isset($_GET['lang'])) {
         font-family: 'Roboto', sans-serif;
         color: rgba(206, 38, 189, 0.8);
         font-weight: bold;
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     #heading h2 {

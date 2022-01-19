@@ -77,6 +77,19 @@ if (isloggedin()) {
                 include($viewsubmittedform_p);
                 break;
 
+            case 'viewBIGgallery':
+                include($viewBIGgallery_p);
+                break;
+
+            case 'addtoBIGgallery':
+                include($addtoBIGgallery_p);
+                break;
+
+            case 'deletefromBIGgallery':
+                include($deletefromBIGgallery_p);
+                include($viewBIGgallery_p);
+                break;
+
             default:
                 include($homepage_p);
         }

@@ -131,6 +131,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($target_file == "") {
                     $target_file_result = $conn->query("SELECT photopath from `boardmembers_table` where id='$id'");
                     $target_file = $target_file_result->fetch_assoc()['photopath'];
+                } else{
+                    $delete_file_result = $conn->query("SELECT photopath from `boardmembers_table` where id='$id'");
+                    $delete_file = $delete_file_result->fetch_assoc()['photopath'];
+                    unlink($delete_file);
                 }
 
                 $edit_board_member_query = "UPDATE `boardmembers_table` SET name='$bmname', dob='$bmdob', email='$bmemail', address='$bmaddress', phoneno='$bmphoneno', details='$bmdetails', photopath='$target_file' WHERE id='$id'";

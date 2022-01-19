@@ -36,7 +36,7 @@ include($head_p);
         font-family: 'Roboto', sans-serif;
         color: rgba(206, 38, 189, 0.6);
         font-weight: bold;
-        font-size: 3rem;
+        font-size: 2.25rem;
     }
 
     #heading h2 {

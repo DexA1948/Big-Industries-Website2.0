@@ -73,6 +73,9 @@ $deleteboardmember_p = $admin_p."deleteboardmember.php";
 $BMDvalidation_p = $admin_p."BMDvalidation.php";
 $edityoutubelinks_p = $admin_p."edityoutubelinks.php";
 $viewsubmittedform_p = $admin_p."viewsubmittedform.php";
+$viewBIGgallery_p = $admin_p."viewBIGgallery.php";
+$addtoBIGgallery_p = $admin_p."addtoBIGgallery.php";
+$deletefromBIGgallery_p = $admin_p."deletefromBIGgallery.php";
 
 // ##################   IMAGES FOR SITE ####################### //
 $siteimg_folder = $rootfolder_p."siteimg/";
@@ -90,6 +93,9 @@ $BIGbackground = $siteimg_folder."backgroundtheme.jpg";
 $primebanklogo = $siteimg_folder."primebanklogo.png";
 $nepalflag_png = $siteimg_folder."NepalFlag.png";
 $usflag_png = $siteimg_folder."USFlag.png";
+$addimageicon_png = $siteimg_folder."add-image.png";
+$addimagewbicon_png = $siteimg_folder."add-imagewb.png";
+$dangercross_png = $siteimg_folder."dangercross.png";
 
 $aboutus_folder = $siteimg_folder."aboutus/";
 $aboutus_photos = array(

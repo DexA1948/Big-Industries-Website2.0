@@ -18,6 +18,7 @@ if (!isset($_GET['id'])) {
     } else {
         $row = $result->fetch_assoc();
         $id = $row['id'];
+        $submittedDate = $row["submittedDate"];
         $petitionername = $row['petitionername'];
         $contactnumber = $row['contactnumber'];
         $email = $row['email'];
@@ -83,6 +84,10 @@ if (!isset($_GET['id'])) {
                 <div class="col-md-6">
                     <table class="table border">
                         <tbody>
+                            <tr>
+                                <th>Submitted Time:</th>
+                                <td><?php echo $submittedDate; ?></td>
+                            </tr>
                             <tr>
                                 <th>Source of Fund:</th>
                                 <td><?php echo $sourceoffund; ?></td>

@@ -234,11 +234,12 @@ if (isset($_POST["submitform"])) {
 
         if ($conn->query($applyshare_query)) {
             echo "<script>alert('Your Details Were Submitted Successfully');</script>";
+            echo "<p class='h5 w-75 mx-auto my-4 p-2 bg-success'>Hello " . $petitionername . "! Your details were submitted successfully. We will contact you soon.</p>";
+            $petitionername = $contactnumber = $email = $currentaddress = $citizenshipaddress = $changedaddress = $appliedkitta = $appliedamount = $depositedamount = $sourceoffund = $petitionerphoto = $voucherphoto = $citizenshipphoto = $petitionerphoto = $voucherphoto = $citizenshipphoto = "";
         } else {
             echo "<script>alert('Error While Submitting Details, Try Again');</script>";
+            echo "<p class='h5 w-75 mx-auto my-4 p-2 bg-success'>Hello " . $petitionername . "! Your details couldn't be submitted for some reason, please try again.</p>";
         }
-        echo "<p class='h4 my-2 p-2 bg-success'>Hello " . $petitionername . "! Your details were submitted successfully. We will contact you soon.</p>";
-        $petitionername = $contactnumber = $email = $currentaddress = $citizenshipaddress = $changedaddress = $appliedkitta = $appliedamount = $depositedamount = $sourceoffund = $petitionerphoto = $voucherphoto = $citizenshipphoto = $petitionerphoto = $voucherphoto = $citizenshipphoto = "";
     } else {
         if ($petitionerphotoErr == "") {
             $petitionerphotoErr = "Please select this photo again";
@@ -264,7 +265,7 @@ if (isset($_POST["submitform"])) {
 </style>
 <div class="container-fluid my-4 p-2 w-75" style="border:1px solid #AB4F9A">
     <div class="row p-4">
-        <p>You can also submit the form by sending us following details in Viber ( <span><?php echo $BIGmobile_no;?></span> ):</p>
+        <p>You can also submit the form by sending us following details in Viber ( <span><?php echo $BIGmobile_no; ?></span> ):</p>
         <ul class="list-group">
             <li class="list-group-item">Your Name</li>
             <li class="list-group-item">Contact Number</li>

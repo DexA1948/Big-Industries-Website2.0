@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4 mt-4">
+        <div class="col-lg-4 my-4">
             <div class="container-fluid text-white mt-0">
                 <div class="ratio ratio-16x9">
                     <iframe src="https://maps.google.com/maps?q=samakhusi&t=&z=13&ie=UTF8&iwloc=&output=embed" title="Google Map Location" allowfullscreen></iframe>

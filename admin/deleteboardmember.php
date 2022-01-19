@@ -25,6 +25,7 @@ if (!isset($_GET['id'])) {
             if ($_GET['ans'] !== 'yes') {
                 echo "<script>alert('Board Member Wasn\'t Deleted');</script>";
             } else {
+                unlink($result->fetch_assoc()['photopath']);
                 $delete_BMD_query = $conn->prepare("DELETE FROM `boardmembers_table` where id=?");
                 $delete_BMD_query->bind_param("i", $id);
                 $delete_BMD_query->execute();

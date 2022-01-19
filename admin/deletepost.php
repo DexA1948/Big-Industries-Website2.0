@@ -25,6 +25,7 @@ if (!isset($_GET['id'])) {
             if ($_GET['ans'] !== 'yes') {
                 echo "<script>alert('Post Wasn\'t Deleted');</script>";
             } else {
+                unlink($result->fetch_assoc()['photopath']);
                 $delete_post_query = $conn->prepare("DELETE FROM `post_table` where id=?");
                 $delete_post_query->bind_param("i", $id);
                 $delete_post_query->execute();
